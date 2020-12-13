@@ -1,0 +1,80 @@
+.canvas {
+  background-size: contain;
+  margin: auto;
+  width: 480px;
+  height: 480px;
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url('https://i.pinimg.com/originals/b2/b0/84/b2b084ad6061dfe2122302266ea8af58.jpg');
+background-position: center;
+overflow: hidden;
+}
+
+
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+  width: 40px;
+  height: 40px;
+
+}
+
+
+
+.block {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+    background-image: url('../../assets/pipe.png');
+  animation: block 0.3s linear;
+}
+@keyframes block {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: 40px;
+  }
+}
+
+.tick {
+  position: relative;
+
+  animation: tick 0.3s linear;
+}
+
+
+.character {
+    position: relative;
+    z-index: 2;
+    animation: character 0.3s linear;
+  }
+  
+  @keyframes character {
+    0% {
+      top: 0px;
+    }
+    100% {
+      top: 40px;
+    }
+  }
+
+  @keyframes tick {
+    0% {
+      background-color: rgba(255, 255, 255, 0);
+    }
+    100% {
+      background-color: rgba(255, 255, 255, 0);
+    }
+  }
+  
+  .hazard {
+      transform: scale(1.2);
+  
+      background-size: cover;
+      background-position: center;
+        background-image: url('../../assets/pipeHead.png');
+  
+  }
