@@ -1,3 +1,5 @@
+import { generateBlock } from './generateBlock';
+
 export const jumpUp = (bird: { x: number; y: number }) => {
   const newBird = { ...bird };
   newBird.x -= 1;
@@ -12,14 +14,10 @@ export const fallDown = (bird: { x: number; y: number }) => {
 
 export const moveBlocksForward = (block: { x: number; y: number }[]) => {
   const newBlock = [...block];
+  // eslint-disable-next-line consistent-return
   newBlock.forEach((blockCell) => {
-    if (blockCell.y < 0) {
-      // eslint-disable-next-line no-param-reassign
-      blockCell.y = 12;
-    } else {
-      // eslint-disable-next-line no-param-reassign
-      blockCell.y -= 1;
-    }
+    // eslint-disable-next-line no-param-reassign
+    blockCell.y -= 1;
   });
   return newBlock;
 };

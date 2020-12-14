@@ -6,10 +6,11 @@ import styles from './Grid.module.scss';
 interface Props {
   grid: { x: number; y: number }[];
   block: { x: number; y: number }[];
+  blockSecond: { x: number; y: number }[];
   bird: { x: number; y: number };
 }
 
-const Grid: FC<Props> = ({ block, grid, bird }) => {
+const Grid: FC<Props> = ({ blockSecond, block, grid, bird }) => {
   return (
     <div className={styles.canvas}>
       {grid.map((cell, i) => {
@@ -20,6 +21,7 @@ const Grid: FC<Props> = ({ block, grid, bird }) => {
               [styles.cell]: true,
               [styles.bird]: _.isEqual(cell, bird),
               [styles.block]: _.some(block, cell),
+              [styles.blockSecond]: _.some(blockSecond, cell),
             })}
           ></div>
         );
