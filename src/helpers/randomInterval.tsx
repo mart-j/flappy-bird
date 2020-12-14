@@ -1,5 +1,5 @@
 import _ from 'lodash';
 
 export const randomInterval = () => {
-  return _.random(12, 24);
+  return _.random(12, 18);
 };
